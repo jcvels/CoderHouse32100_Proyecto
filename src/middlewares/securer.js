@@ -1,5 +1,9 @@
 const openPaths = [
-    { path:'/api/products', method: 'GET' }
+    { path:'/api/products', method:'GET' },
+    { path:'/api/cart', method:'GET' },
+    { path:'/api/cart', method:'POST' },
+    { path:'/api/cart', method:'DELETE' },
+    { path:'/api/cart', method:'GET' },
 ]
 
 const isPathOpen = (req) => {

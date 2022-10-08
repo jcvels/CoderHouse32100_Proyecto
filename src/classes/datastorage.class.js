@@ -29,8 +29,8 @@ class Datastorage {
             data_to_save.id = file_content.length === 0 ? 1 : file_content[ file_content.length -1 ].id + 1
             data_to_save.timestamp = { create: Date.now(), update: null };
             file_content.push( data_to_save );
-            await writeFile(this.fileName, JSON.stringify( file_content, null, 4 ) , {encoding:'utf-8'})
-            return data_to_save
+            await writeFile(this.fileName, JSON.stringify( file_content, null, 4 ) , {encoding:'utf-8'});
+            return data_to_save;
         }
         catch (error) {
             console.log(error);

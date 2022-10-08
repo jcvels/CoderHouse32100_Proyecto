@@ -18,7 +18,10 @@ Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que i
     - POST: `/` - Crea un carrito y devuelve su id.
     - DELETE: `/:id` - Vacía un carrito y lo elimina.
     - GET: `/:id/products` - Me permite listar todos los productos guardados en el carrito
-    - POST: `/:id/products` - Para incorporar productos al carrito por su id de producto
+    - POST: `/:id/products/:id_prod` - Para incorporar productos al carrito por su id de producto
+
+    > Dado que la indicación es que se agrega el producto por su id modifiqué la ruta para recibir ese parametro.
+
     - DELETE: `/:id/products/:id_prod` - Eliminar un producto del carrito por su id de carrito y de producto
 
 3) Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login. Según su valor (true ó false) me permitirá alcanzar o no las rutas indicadas. 
