@@ -15,9 +15,15 @@ Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que i
     - GET: `/:id/productos` - Me permite listar todos los productos guardados en el carrito
     - POST: `/:id/productos` - Para incorporar productos al carrito por su id de producto
     - DELETE: `/:id/productos/:id_prod` - Eliminar un producto del carrito por su id de carrito y de producto
-3) Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login. Según su valor (true ó false) me permitirá alcanzar o no las rutas indicadas. En el caso de recibir un request a una ruta no permitida por el perfil, devolver un objeto de error. Ejemplo: { error : -1, descripcion: ruta 'x' método 'y' no autorizada }
-4) Un producto dispondrá de los siguientes campos:  id, timestamp, nombre, descripcion, código, foto (url), precio, stock.
-5) El carrito de compras tendrá la siguiente estructura: id, timestamp(carrito), productos: 
+3) Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login. Según su valor (true ó false) me permitirá alcanzar o no las rutas indicadas. 4) En el caso de recibir un request a una ruta no permitida por el perfil, devolver un objeto de error. Ejemplo: 
+```js
+{
+    error : -1,
+    descripcion: ruta 'x' método 'y' no autorizada
+}
+```
+5) Un producto dispondrá de los siguientes campos:  id, timestamp, nombre, descripcion, código, foto (url), precio, stock.
+6) El carrito de compras tendrá la siguiente estructura: id, timestamp(carrito), productos: 
 ```js
 {
     id,
@@ -30,8 +36,8 @@ Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que i
     stock
 }
 ```
-> El timestamp puede implementarse con Date.now()
-6) Realizar la persistencia de productos y del carrito de compras en el filesystem.
+> El timestamp puede implementarse con `Date.now()`
+7) Realizar la persistencia de productos y del carrito de compras en el filesystem.
 
 ## A tener en cuenta
 1) Para realizar la prueba de funcionalidad hay dos opciones:

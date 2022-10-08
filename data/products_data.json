@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "name": "Rustic Metal Bike",
+        "description": "Quia exercitationem corrupti sequi ab eveniet. Commodi veritatis voluptatem est quia modi consequatur nobis. Ut rerum iure animi inventore incidunt natus labore eligendi. Nesciunt et eligendi vel.",
+        "code": "0e8ffb4e-7617-4ee6-864b-311313311ffa",
+        "price": 464.52,
+        "stock": 338,
+        "thumbnail": "http://placeimg.com/640/480",
+        "timestamp": {
+            "create": 1665207468905,
+            "update": null
+        }
+    },
+    {
+        "id": 2,
+        "name": "Refined Fresh Mouse",
+        "description": "Reprehenderit aut unde corrupti aut delectus voluptatem. Magnam consequatur facilis. Quis assumenda ea quasi eos ut sint harum.",
+        "code": "c28df45b-9bfc-4002-b82d-11b2ccdff8a1",
+        "price": 233.54,
+        "stock": 679,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207538784,
+            "update": null
+        }
+    },
+    {
+        "id": 3,
+        "name": "Small Fresh Shirt",
+        "description": "Aspernatur sit quibusdam. Amet aspernatur quidem expedita suscipit ut vel. Sit accusamus itaque iusto dolor necessitatibus. Id et in reprehenderit quis sit tenetur non. Voluptas doloribus quod optio.",
+        "code": "d877a23f-2b54-4c3f-87c6-cc3d04506afb",
+        "price": 997.42,
+        "stock": 67,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207563943,
+            "update": null
+        }
+    },
+    {
+        "id": 4,
+        "name": "Sleek Steel Shoes",
+        "description": "Vel sit occaecati aliquam expedita reprehenderit mollitia sapiente. Officiis magnam odit dolores omnis consequatur nesciunt a sunt ut. Et officiis cupiditate tempora harum saepe. Ipsa eum exercitationem quia nulla ullam est est. Aliquid velit laudantium tempore dolores. Saepe rem quam ipsam.",
+        "code": "f5ce3935-ffcb-4cb8-a916-1962c505d826",
+        "price": 871.51,
+        "stock": 213,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207564988,
+            "update": null
+        }
+    },
+    {
+        "id": 5,
+        "name": "Awesome Concrete Table",
+        "description": "Deleniti quibusdam consequatur ut ut ex rerum ut vel. Id corporis et quod. Maiores ut voluptatum sunt quod ipsam.",
+        "code": "29678983-208d-4b6c-8478-24863fe863b7",
+        "price": 223.28,
+        "stock": 310,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207565864,
+            "update": null
+        }
+    },
+    {
+        "id": 6,
+        "name": "Generic Concrete Bacon",
+        "description": "Voluptatem vitae omnis eum quia occaecati rem ut eum. Voluptatibus deleniti quo atque nihil ab pariatur atque vel sit. Exercitationem exercitationem eum velit qui distinctio enim. Molestiae aspernatur dolores ut non ex debitis eius.",
+        "code": "25b02497-9605-40f8-b954-7ed58e870f22",
+        "price": 135.96,
+        "stock": 813,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207566773,
+            "update": 1665208012918
+        }
+    },
+    {
+        "id": 7,
+        "name": "Handmade Plastic Gloves",
+        "description": "Mollitia eius nobis. Tempora pariatur sit odio est amet sunt eius cumque. Voluptates veritatis reiciendis iure earum corporis debitis suscipit nisi animi. Iure ea voluptas esse repudiandae fugit impedit ut. Eveniet quia recusandae quasi libero vel esse laborum. Nulla qui inventore nam ducimus vel laboriosam.",
+        "code": "d20680fe-b6cc-4141-87f8-ccef81affaaf",
+        "price": 758.63,
+        "stock": 788,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207567657,
+            "update": null
+        }
+    },
+    {
+        "id": 8,
+        "name": "Gorgeous Concrete Salad",
+        "description": "Recusandae odit facere accusantium. Error et voluptatem praesentium et iusto. Vel ullam nisi rerum dolores voluptas illum.",
+        "code": "95b889fd-d585-4465-b78a-101a3c0aedf0",
+        "price": 615.32,
+        "stock": 95,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207568653,
+            "update": null
+        }
+    },
+    {
+        "id": 9,
+        "name": "Refined Wooden Car",
+        "description": "Alias unde quia voluptatem modi. Praesentium suscipit sunt quo debitis consequatur. Natus reprehenderit quisquam exercitationem labore. Ipsum voluptas quo eos qui quia. Exercitationem optio in aut quaerat reiciendis corrupti consequatur.",
+        "code": "8a72ba63-4466-43ac-9570-3c123a0a83c6",
+        "price": 126.15,
+        "stock": 402,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207570293,
+            "update": null
+        }
+    },
+    {
+        "id": 10,
+        "name": "Awesome Cotton Pants",
+        "description": "Iusto sed aut est voluptatum qui facere soluta est. Qui doloribus quidem quia voluptates iste quis aut voluptatem. Numquam velit quo quis sed pariatur amet autem.",
+        "code": "e268e978-c103-4197-a8a2-dedf45703ca3",
+        "price": 777.23,
+        "stock": 317,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665207571389,
+            "update": null
+        }
+    },
+    {
+        "id": 12,
+        "name": "Intelligent Soft Soap",
+        "description": "Tenetur dolores doloremque sed molestiae et minus. Qui vero qui est perferendis porro molestias qui. Officiis et incidunt molestiae consequatur.",
+        "code": "a17f7f4f-95c1-4d0f-bc0e-3c537c1766ca",
+        "price": 456.77,
+        "stock": 875,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665208653487,
+            "update": null
+        }
+    },
+    {
+        "id": 13,
+        "name": "Refined Frozen Hat",
+        "description": "Aspernatur eligendi delectus dolor minima. Provident sunt distinctio sunt eos eius. Quis dolores corporis debitis dolorem qui enim. Quo sed delectus qui qui ipsum. Magnam maxime quia ab molestiae sunt laboriosam dolor rerum.",
+        "code": "7105f36e-440d-45b9-9875-ed6636db6307",
+        "price": 850.45,
+        "stock": 903,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665208654800,
+            "update": null
+        }
+    }
+]
