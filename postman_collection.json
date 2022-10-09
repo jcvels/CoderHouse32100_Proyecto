@@ -17,7 +17,8 @@
 							{
 								"key": "Admin",
 								"value": "false",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
@@ -65,8 +66,7 @@
 							{
 								"key": "Admin",
 								"value": "true",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"body": {
@@ -94,7 +94,13 @@
 					"name": "update_one_product",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Admin",
+								"value": "true",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"id\": {{customRandomNumber}},\r\n    \"name\": \"{{$randomProductName}}\",\r\n    \"description\": \"{{$randomLoremParagraph}}\",\r\n    \"code\": \"{{$randomUUID}}\",\r\n    \"price\": {{$randomPrice}},\r\n    \"stock\": {{$randomInt}},\r\n    \"thumbnail\": \"{{$randomCatsImage}}\"\r\n}",
@@ -121,15 +127,21 @@
 					"name": "delete_one_product",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Admin",
+								"value": "true",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{base_url}}\\products\\11",
+							"raw": "{{base_url}}\\products\\13",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"products",
-								"11"
+								"13"
 							]
 						}
 					},
