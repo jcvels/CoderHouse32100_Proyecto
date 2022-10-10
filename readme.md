@@ -4,8 +4,10 @@ Primer entrega del proyecto final CoderHouse #32100
 # Ejecutar resolucion
 
 ## Local
+- Ejecutar el comando `npm i`.
 - Ejecutar el comando `npm start`.
 - Acceder a `http://localhost:8080`
+- Se puede utilizar `postman_collecction.json` en Postman para prueba de funcionalidad.
 
 ## Glitch
 Esta herramienta me parece lo peor del mundo:
@@ -16,7 +18,7 @@ Esta herramienta me parece lo peor del mundo:
 - Te lleva mas tiempo el deploy que codear la resolución.
 
 Acceso:
-- [Glitch Apestoso]()
+- [Problematico Glitch]()
 
 ## Heroku
 Como Glitch apesta, hice un deploy en Heroky que solo me tomo solo 5 segundos:
@@ -39,10 +41,9 @@ Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que i
     - DELETE: `/:id` - Vacía un carrito y lo elimina.
     - GET: `/:id/products` - Me permite listar todos los productos guardados en el carrito
     - POST: `/:id/products/:id_prod` - Para incorporar productos al carrito por su id de producto
-
-    > Dado que la indicación es que se agrega el producto por su id modifiqué la ruta para recibir ese parametro.
-
     - DELETE: `/:id/products/:id_prod` - Eliminar un producto del carrito por su id de carrito y de producto
+
+> Dado que la indicación es que se agrega el producto por su id, modifiqué la ruta para recibir ese parametro.
 
 3) Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login. Según su valor (true ó false) me permitirá alcanzar o no las rutas indicadas. 
 
