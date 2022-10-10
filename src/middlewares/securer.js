@@ -1,13 +1,13 @@
-const openPaths = [
-    { path:'/api/products', method:'GET' },
-    { path:'/api/cart', method:'GET' },
-    { path:'/api/cart', method:'POST' },
-    { path:'/api/cart', method:'DELETE' },
-    { path:'/api/cart', method:'GET' },
+const securedPaths = [
+    { path:'/api/products', method:'POST' },
+    { path:'/api/products', method:'PUT' },
+    { path:'/api/products', method:'DELETE' },
 ]
 
 const isPathOpen = (req) => {
-    return openPaths.some( item => item.method === req.method && req.url.includes(item.path) )
+    let isSecured = securedPaths.some( item => item.method === req.method && req.url.includes(item.path) );
+    console.log('isSecured =', isSecured);
+    return !isSecured
 }
 
 const securer = (req, res, next) => {

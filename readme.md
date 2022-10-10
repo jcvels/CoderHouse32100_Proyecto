@@ -1,13 +1,33 @@
 # Primera entrega del Proyecto Final
+Primer entrega del proyecto final CoderHouse #32100
+
+# Ejecutar resolucion
+
+## Local
+- Ejecutar el comando `npm start`.
+- Acceder a `http://localhost:8080`
+
+## Glitch
+Esta herramienta me parece lo peor del mundo:
+- Tarde en inicializar los proyectos.
+- Siempre hay que usar un 'template' porque si clonas desde github no funciona
+- Hay que subir los archivos UNO por UNO.
+- No la conoce nadie.
+- Te lleva mas tiempo el deploy que codear la resolución.
+
+Acceso:
+- [Glitch Apestoso]()
+
+## Heroku
+Como Glitch apesta, hice un deploy en Heroky que solo me tomo solo 5 segundos:
+- [Heroku](https://coder32100-proyecto-pauvels.herokuapp.com/api/products)
 
 ## Consigna
-
 Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que implemente un servidor de aplicación basado en la plataforma Node.js y el módulo express. El servidor implementará dos conjuntos de rutas agrupadas en routers, uno con la url base `/products` y el otro con `/cart`. El puerto de escucha será el `8080` para desarrollo y `process.env.PORT` para producción en glitch.com.
 
 > Modifiqué las rutas indicadas en la consigna para que todas esten en inglés.
 
 ## Aspectos a incluir en el entregable
-
 1) El router base `/api/products` implementará cuatro funcionalidades:
     - GET: `/:id?` - Me permite listar todos los productos disponibles ó un producto por su id (disponible para usuarios y administradores)
     - POST: `/` - Para incorporar productos al listado (disponible para administradores)
@@ -38,7 +58,6 @@ Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que i
 7) Realizar la persistencia de productos y del carrito de compras en el filesystem.
 
 ## A tener en cuenta
-
 1) Para realizar la prueba de funcionalidad hay dos opciones:
     - Probar con postman cada uno de los endpoints (productos y carrito) y su operación en conjunto.
     - Realizar una aplicación frontend sencilla, utilizando HTML/CSS/JS ó algún framework de preferencia, que represente el listado de productos en forma de cards. En cada card figuran los datos del producto, que, en el caso de ser administradores, podremos editar su información. Para este último caso incorporar los botones actualizar y eliminar. También tendremos un formulario de ingreso de productos nuevos con los campos correspondientes y un botón enviar. Asimismo, construir la vista del carrito donde se podrán ver los productos agregados e incorporar productos a comprar por su id de producto. Esta aplicación de frontend debe enviar los requests get, post, put y delete al servidor utilizando fetch y debe estar ofrecida en su espacio público.
