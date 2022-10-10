@@ -245,5 +245,44 @@
             "create": 1665273268692,
             "update": null
         }
+    },
+    {
+        "id": 22,
+        "name": "Intelligent Metal Chair",
+        "description": "Et possimus et quas architecto sed soluta dolor. Illum consequatur libero omnis. Eum assumenda ea eum consectetur illo sint molestiae. Earum ipsum sed dignissimos. Voluptatum voluptatum cumque quibusdam in delectus accusamus nesciunt. Voluptas exercitationem distinctio quidem provident reiciendis.",
+        "code": "3aa8e2e1-b663-4f5d-8a82-479a7aa65c61",
+        "price": 517.78,
+        "stock": 828,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665432067069,
+            "update": null
+        }
+    },
+    {
+        "id": 23,
+        "name": "Small Frozen Tuna",
+        "description": "Odit voluptatum iusto minus et ut autem reiciendis nam. Est fugit iusto adipisci. Tempora esse dolorem temporibus similique sit et deleniti omnis. Quos vel amet impedit repudiandae ea.",
+        "code": "60862ba3-d62b-4c0d-a899-dc39bf54b5a0",
+        "price": 603.87,
+        "stock": 513,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665432165709,
+            "update": null
+        }
+    },
+    {
+        "id": 24,
+        "name": "Rustic Cotton Cheese",
+        "description": "Ipsa totam itaque aliquam quo. Est esse aspernatur veritatis quia doloremque distinctio est eos sint. Eligendi natus harum maxime et vitae asperiores illo magni fugit.",
+        "code": "b9b6e467-9600-46e0-9684-181a31893f7b",
+        "price": 174.5,
+        "stock": 615,
+        "thumbnail": "http://placeimg.com/640/480/cats",
+        "timestamp": {
+            "create": 1665432247128,
+            "update": null
+        }
     }
 ]

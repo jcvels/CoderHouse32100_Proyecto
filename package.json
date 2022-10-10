@@ -2,7 +2,7 @@
   "name": "coderhouse32100_proyecto",
   "version": "0.1.0",
   "description": "Proyecto final curso CoderHouse 32100",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node .",
     "test": "nodemon ."
