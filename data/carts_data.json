@@ -1,0 +1,71 @@
+[
+    {
+        "id": 1,
+        "products": [
+            {
+                "id": 2,
+                "name": "Refined Fresh Mouse",
+                "description": "Reprehenderit aut unde corrupti aut delectus voluptatem. Magnam consequatur facilis. Quis assumenda ea quasi eos ut sint harum.",
+                "code": "c28df45b-9bfc-4002-b82d-11b2ccdff8a1",
+                "price": 233.54,
+                "stock": 679,
+                "thumbnail": "http://placeimg.com/640/480/cats",
+                "timestamp": {
+                    "create": 1665207538784,
+                    "update": null
+                }
+            },
+            {
+                "id": 1,
+                "name": "Rustic Metal Bike",
+                "description": "Quia exercitationem corrupti sequi ab eveniet. Commodi veritatis voluptatem est quia modi consequatur nobis. Ut rerum iure animi inventore incidunt natus labore eligendi. Nesciunt et eligendi vel.",
+                "code": "0e8ffb4e-7617-4ee6-864b-311313311ffa",
+                "price": 464.52,
+                "stock": 338,
+                "thumbnail": "http://placeimg.com/640/480",
+                "timestamp": {
+                    "create": 1665207468905,
+                    "update": null
+                }
+            },
+            {
+                "id": 5,
+                "name": "Awesome Concrete Table",
+                "description": "Deleniti quibusdam consequatur ut ut ex rerum ut vel. Id corporis et quod. Maiores ut voluptatum sunt quod ipsam.",
+                "code": "29678983-208d-4b6c-8478-24863fe863b7",
+                "price": 223.28,
+                "stock": 310,
+                "thumbnail": "http://placeimg.com/640/480/cats",
+                "timestamp": {
+                    "create": 1665207565864,
+                    "update": null
+                }
+            },
+            {
+                "id": 6,
+                "name": "Generic Concrete Bacon",
+                "description": "Voluptatem vitae omnis eum quia occaecati rem ut eum. Voluptatibus deleniti quo atque nihil ab pariatur atque vel sit. Exercitationem exercitationem eum velit qui distinctio enim. Molestiae aspernatur dolores ut non ex debitis eius.",
+                "code": "25b02497-9605-40f8-b954-7ed58e870f22",
+                "price": 135.96,
+                "stock": 813,
+                "thumbnail": "http://placeimg.com/640/480/cats",
+                "timestamp": {
+                    "create": 1665207566773,
+                    "update": 1665208012918
+                }
+            }
+        ],
+        "timestamp": {
+            "create": 1665248286866,
+            "update": 1665260779236
+        }
+    },
+    {
+        "id": 2,
+        "products": [],
+        "timestamp": {
+            "create": 1665257126562,
+            "update": 1665258522550
+        }
+    }
+]
