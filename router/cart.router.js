@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const api = require('../api/cart.api');
+const cartsController = require('../controllers/carts.controller');
 
-router.get('/:id/products', api.listProducts );
-router.post('/', api.create );
-router.post('/:id/products/:id_prod', api.addProduct );
-router.delete('/:id', api.del );
-router.delete('/:id/products/:id_prod', api.delProduct );
+router.get('/:id/products', cartsController.listProducts );
+router.post('/', cartsController.create );
+router.post('/:id/products/:id_prod', cartsController.addProduct );
+router.delete('/:id', cartsController.del );
+router.delete('/:id/products/:id_prod', cartsController.delProduct );
 
 module.exports = router;

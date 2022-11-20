@@ -16,7 +16,7 @@ server.use(securer);
 server.use('/', express.static('public'));
 server.use('/', router);
 
-server.use(errorMiddleware)
+server.use(errorMiddleware);
 
 server.listen(port)
     .on('listening', () => console.log(`--> listening port ${port}`) )
