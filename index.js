@@ -1,5 +1,6 @@
 const express = require('express');
 const securer = require('./middlewares/securer.middleware');
+const errorMiddleware = require('./middlewares/error.middleware');
 const router = require('./router/app.router');
 
 const port = process.env.PORT || 8080;
@@ -13,7 +14,9 @@ server.use(securer);
 server.use('/', express.static('src/public'));
 server.use('/', router);
 
+server.use(errorMiddleware)
+
 server.listen(port)
     .on('listening', () => console.log(`--> listening port ${port}`) )
-    .on('request', (data) => console.log(`--> ${data.method} --> ${data.url}` ) )
+    .on('request', (data) => console.log(`--> new ${data.method} request to ${data.url}` ) )
     .on('error', (err) => console.log(`--> ${err}`) )
