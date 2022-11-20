@@ -1,5 +1,5 @@
 const express = require('express');
-const securer = require('./middlewares/securer');
+const securer = require('./middlewares/securer.middleware');
 const router = require('./router/app.router');
 
 const port = process.env.PORT || 8080;
