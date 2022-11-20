@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoConfig = require('../../config/databases.config').mongo;
+const mongoConfig = require('../../config/datasources.config').mongo;
 
 class MongoContainer {
 

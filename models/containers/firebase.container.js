@@ -1,6 +1,6 @@
 const admin = require('firebase-admin')
 const { getFirestore } = require("firebase-admin/firestore")
-const firebaseConfig = require('../../config/databases.config').firebase;
+const firebaseConfig = require('../../config/datasources.config').firebase;
 
 const connect = () => {
     admin.initializeApp({
