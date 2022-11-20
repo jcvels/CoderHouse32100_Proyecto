@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const mongoConfig = require('../../config/databases.config').mongo;
 
-class mongoContainer {
+class MongoContainer {
 
     constructor(collection, schema) {
         this.model = mongoose.schema(collection, schema);
@@ -20,9 +20,9 @@ class mongoContainer {
         return await newDocument.save();
     }
      
-    async read( id = null, filter = {} ) {
+    async read( id = null ) {
         if(id === null ) {
-            const documents = await this.model.find(filter).lean();
+            const documents = await this.model.find().lean();
             return documents;
         }
         else {
@@ -47,4 +47,4 @@ class mongoContainer {
 
 }
 
-module.exports = mongoContainer;
+module.exports = MongoContainer;
