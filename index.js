@@ -3,6 +3,8 @@ const securer = require('./middlewares/securer.middleware');
 const errorMiddleware = require('./middlewares/error.middleware');
 const router = require('./router/app.router');
 
+require('dotenv').config()
+
 const port = process.env.PORT || 8080;
 const server = express();
 
@@ -11,7 +13,7 @@ server.use(express.urlencoded({extended:true}))
 
 server.use(securer);
 
-server.use('/', express.static('src/public'));
+server.use('/', express.static('public'));
 server.use('/', router);
 
 server.use(errorMiddleware)
