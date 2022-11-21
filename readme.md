@@ -7,7 +7,7 @@ Segunda entrega del proyecto final CoderHouse #32100
 - Ejecutar el comando `npm i`.
 - Ejecutar el comando `npm start`.
 - Acceder a `http://localhost:8080`
-- Se puede utilizar `postman_collecction.json` en Postman para prueba de funcionalidad.
+- Puede utilizar `postman_collecction.json` en Postman para prueba de funcionalidad.
 
 ## Consigna
 Basándose en los contenedores ya desarrollados (memoria, archivos) desarrollar dos contenedores más (que cumplan con la misma interfaz) que permitan realizar las operaciones básicas de CRUD en MongoDb (ya sea local o remoto) y en Firebase. Luego, para cada contenedor, crear dos clases derivadas, una para trabajar con Productos, y otra para trabajar con Carritos.
