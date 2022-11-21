@@ -1,81 +1,53 @@
-const Datastorage = require('../classes/datastorage.class');
-const Cart = require('../classes/cart.class');
+const { ProductsDAO, CartsDAO } = require('../models/app.models');
 
-const carts_db = new Datastorage('data/carts_data.json');
-const products_db = new Datastorage('data/products_data.json');
+const carts_db = new CartsDAO();
+const products_db = new ProductsDAO();
 
-const create = (req, res) => {
-    const new_cart = new Cart({products:[]});
-    carts_db.save( new_cart.getCart() )
-        .then( data => res.status(201).send(data) )
-        .catch( err => res.status(500).send(err) )
+const create = async (req, res, next) => {
+    try {
+        const data = await carts_db.create(req.body)
+        res.status(201).json(data);
+    }
+    catch (error) { next(error) }
 }
 
-const del = (req, res) => {
-    const id_zanitized = Number.parseInt(req.params.id);
-    carts_db.deleteById(id_zanitized)
-        .then( data => {
-            if(data === true) res.status(200).send( { success: `El carrito id=${id_zanitized} fue eliminado correctamente.` } )
-            else res.status(404).send( {error: 404, description: 'El carrito especificado no existe.' } )
-        })
-        .catch( err => res.status(500).send(err) )
+const del = async (req, res, next) => {
+    try {
+        const data = await carts_db.delete(req.params.id);
+        res.status(200).json(data);
+    }
+    catch (error) { next(error) }
 }
 
-const listProducts = (req, res) => {
-    const id_zanitized = Number.parseInt(req.params.id);
-    carts_db.getById(id_zanitized)
-        .then( data => {
-            if( data === null ) res.status(404).send( {error: 404, description: 'El carrito especificado no existe.' } )
-            else if( data.products.length < 1 ) res.status(204).send(data.products);
-            else res.status(200).send(data.products);
-        })
-        .catch( err => res.status(500).send(err) )
+const listProducts = async (req, res, next) => {
+    try {
+        const data = await carts_db.read(req.params.id);
+        res.status(200).json(data.products);
+    }
+    catch (error) { next(error) }
 }
 
-const addProduct = (req, res) => {
-    const id_cart_zanitized = Number.parseInt(req.params.id); 
-    const id_product_zanitized = Number.parseInt(req.params.id_prod); console.log(id_product_zanitized);
-    products_db.getById(id_product_zanitized)
-        .then( product_to_add => {
-            if( product_to_add === null ) res.status(404).send( {error: 404, description: 'El producto especificado no existe.' } )
-            else {
-                carts_db.getById(id_cart_zanitized)
-                    .then( data => {
-                        if( data=== null ) res.status(404).send( {error: 404, description: 'El carrito especificado no existe.' } )
-                        else if( data.products.findIndex( item => item.id === id_product_zanitized ) != -1 )
-                            res.status(400).send( {error: 400, description: `El producto id=${id_product_zanitized} ya se encuantra en el carrito id=${id_cart_zanitized}. No es posible volver a agregarlo.` } )
-                        else {
-                            data.products.push( product_to_add )
-                            carts_db.updateById(id_cart_zanitized, data)
-                                .then( () => res.status(200).send( { success: `El producto id=${id_product_zanitized} fue agregado correctamente al carrito id=${id_cart_zanitized}.` } ) )
-                                .catch( err => res.status(500).send(err) )
-                        }
-                    })
-                    .catch( err => res.status(500).send(err) )
-            }
-        })
-        .catch( err => res.status(500).send(err) )
+const addProduct = async (req, res, next) => {
+    try {
+        const cart_to_update = await carts_db.read(req.params.id);
+        const product_to_add = await products_db.read(req.params.id_prod);
+        cart_to_update.products.push( product_to_add );
+        const data = await carts_db.update(req.params.id, cart_to_update);
+        res.status(200).json(data);
+    }
+    catch (error) { next(error) }
 }
 
-const delProduct = (req, res) => {
-    const id_cart_zanitized = Number.parseInt(req.params.id); 
-    const id_product_zanitized = Number.parseInt(req.params.id_prod);
-    carts_db.getById(id_cart_zanitized)
-        .then( data => {
-            if( data === null ) res.status(404).send( {error: 404, description: 'El carrito especificado no existe.' } )
-            else if( data.products.length < 1 ) res.status(204).send( {error: 0, description: 'El carrito especificado no contiene productos.' } )
-            else {
-                let product_index = data.products.findIndex( item => item.id === id_product_zanitized );
-                if( product_index > -1 ) {
-                    data.products.splice(product_index,1);
-                    carts_db.updateById(id_cart_zanitized, data)
-                        .then( data => res.status(200).send( { success: `El producto id=${id_product_zanitized} fue eliminado correctamente del carrito id=${id_cart_zanitized}.` } ) )
-                        .catch( err => res.status(500).send(err) )
-                }
-                else res.status(404).send( {error: 0, description: 'El producto especificado no existe en el carrito.' } )
-            }
-        })
-        .catch( err => res.status(500).send(err) )
+const delProduct = async (req, res, next) => {
+    try {
+        const cart_to_update = await carts_db.read(req.params.id);
+        const product_index = cart_to_update.products.findIndex( item => item._id == req.params.id_prod ); console.log(product_index);
+        if( product_index === -1 ) throw new Error('Product is not in the cart.');
+        cart_to_update.products.splice(product_index, 1); console.log(updated_cart);
+        const data = await carts_db.update(req.params.id, cart_to_update);
+        res.status(200).json(data);
+    }
+    catch (error) { next(error) }
 } 
 
 module.exports = {
