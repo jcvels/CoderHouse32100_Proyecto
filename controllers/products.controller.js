@@ -1,51 +1,48 @@
-const Datastorage = require('../classes/datastorage.class');
-const Product = require('../classes/product.class');
+const { ProductsDAO } = require('../models/app.models');
 
-const products_db = new Datastorage('data/products_data.json');
+const products_db = new ProductsDAO();
 
-const list = (req, res) => {
-    products_db.getAll()
-        .then( data => res.status(200).send(data) )
-        .catch( err => res.status(500).send(err) )
+const create = async (req, res, next) => {
+    try {
+        const data = await products_db.create(req.body)
+        res.status(201).json(data);
+    }
+    catch (error) { next(error) }
 }
 
-const listOne = (req, res) => {
-    const id_zanitized = Number.parseInt(req.params.id);
-    products_db.getById(id_zanitized)
-        .then( data => {
-            if( data === null ) res.status(204).send(data);
-            else res.status(200).send(data);
-        })
-        .catch( err => res.status(500).send(err) )
+const list = async (req, res, next) => {
+    try {
+        const data = await products_db.read()
+        res.status(200).json(data)
+    }
+    catch (error) { next(error) }
 }
 
-const create = (req, res) => {
-    const new_product = new Product(req.body);
-    products_db.save( new_product.getProduct() )
-        .then( data => res.status(201).send(data) )
-        .catch( err => res.status(500).send(err) )    
+const listOne = async (req, res, next) => {
+    try {
+        const id_zanitized = Number.parseInt(req.params.id);
+        const data = await products_db.read(id_zanitized)
+        res.status(200).json(data);
+    }
+    catch (error) { next(error) }
 }
 
-const update = (req, res) => {
-    const id_zanitized = Number.parseInt(req.params.id);
-    req.body.id = id_zanitized;
-    const updated_product = new Product(req.body);
-    products_db.updateById( id_zanitized, updated_product.getProduct() )
-        .then( data => {
-            if( data === null ) res.status(404).send(data);
-            else res.status(200).send(data);
-        })
-        .catch( err => res.status(500).send(err) )
+const update = async (req, res, next) => {
+    try {
+        const id_zanitized = Number.parseInt(req.params.id);
+        const data = await products_db.update(id_zanitized, req.body)
+        res.status(200).json(data);
+    } 
+    catch (error) { next(error) }
 }
 
-const del = (req, res) => {
-    const id_zanitized = Number.parseInt(req.params.id);
-    products_db.deleteById(id_zanitized)
-        .then( data => {
-            if(data === true) res.status(200).send()
-            else res.status(404).send()
-        })
-        .catch( err => res.status(500).send(err) )
+const del = async (req, res, next) => {
+    try {
+        const id_zanitized = Number.parseInt(req.params.id);
+        const data = await products_db.delete(id_zanitized)
+        res.status(200).json(data);
+    }
+    catch (error) { next(error) }
 }
 
 module.exports = {

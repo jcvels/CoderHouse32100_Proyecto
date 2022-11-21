@@ -4,7 +4,7 @@ const mongoConfig = require('../../config/datasources.config').mongo;
 class MongoContainer {
 
     constructor(collection, schema) {
-        this.model = mongoose.schema(collection, schema);
+        this.model = mongoose.model(collection, schema);
     }
 
     static async connect() {
@@ -27,7 +27,7 @@ class MongoContainer {
         }
         else {
             const document = await this.model.findOne({_id:id});
-            if(!document) throw 'Required document does not exist in our records';
+            if(!document) throw new Error('Required document does not exist in our records');
             return document;
         }
     }
@@ -37,7 +37,7 @@ class MongoContainer {
             {_id:id},
             {$set:{ ... data_to_save }}
         );
-        if( updatedDocument.matchedCount === 0 ) throw 'Required document does not exist in our records';
+        if( updatedDocument.matchedCount === 0 ) throw new Error('Required document does not exist in our records');
         return updatedDocument;
     }
 

@@ -6,6 +6,7 @@ const connect = () => {
     admin.initializeApp({
         credential: admin.credential.cert(firebaseConfig.credentials)
     })
+    console.log('--> connected to Firebase.')
 }
 
 connect();
