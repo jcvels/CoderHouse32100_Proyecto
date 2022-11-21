@@ -20,8 +20,7 @@ const list = async (req, res, next) => {
 
 const listOne = async (req, res, next) => {
     try {
-        const id_zanitized = Number.parseInt(req.params.id);
-        const data = await products_db.read(id_zanitized)
+        const data = await products_db.read(req.params.id)
         res.status(200).json(data);
     }
     catch (error) { next(error) }
@@ -29,8 +28,7 @@ const listOne = async (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
-        const id_zanitized = Number.parseInt(req.params.id);
-        const data = await products_db.update(id_zanitized, req.body)
+        const data = await products_db.update(req.params.id, req.body)
         res.status(200).json(data);
     } 
     catch (error) { next(error) }
@@ -38,8 +36,7 @@ const update = async (req, res, next) => {
 
 const del = async (req, res, next) => {
     try {
-        const id_zanitized = Number.parseInt(req.params.id);
-        const data = await products_db.delete(id_zanitized)
+        const data = await products_db.delete(req.params.id)
         res.status(200).json(data);
     }
     catch (error) { next(error) }

@@ -9,9 +9,6 @@ Segunda entrega del proyecto final CoderHouse #32100
 - Acceder a `http://localhost:8080`
 - Se puede utilizar `postman_collecction.json` en Postman para prueba de funcionalidad.
 
-### Heroku
-- [Heroku](https://coder32100-proyecto-pauvels.herokuapp.com/api/products)
-
 ## Consigna
 Basándose en los contenedores ya desarrollados (memoria, archivos) desarrollar dos contenedores más (que cumplan con la misma interfaz) que permitan realizar las operaciones básicas de CRUD en MongoDb (ya sea local o remoto) y en Firebase. Luego, para cada contenedor, crear dos clases derivadas, una para trabajar con Productos, y otra para trabajar con Carritos.
 

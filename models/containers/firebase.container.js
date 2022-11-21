@@ -27,13 +27,13 @@ class FirebaseContainer {
         if(id === null ) {
             const docRef = await this.query.get();
             const documents = docRef.docs;
-            return documents.map(document =>{
+            return documents.map(document => {
                 return { id:document.id, ...document.data() }
             });
         }
         else {
             const docRef = await this.query.doc(id);
-            if(!docRef) throw 'Required document does not exist in our records';
+            if(!docRef) throw new Error('Required document does not exist in our records');
             const document = await docRef.get()
             return document.data()
         }
@@ -41,13 +41,13 @@ class FirebaseContainer {
 
     async update(id, data_to_save) {
         const docRef = this.query.doc(id);
-        if(!docRef) throw 'Required document does not exist in our records';
-        return await docRef.update(data_to_save)
+        if(!docRef) throw new Error('Required document does not exist in our records');
+        return await docRef.update(data_to_save);
     }
 
-    async delete(id){
-        const docRef = this.query.doc(id)
-        return await docRef.delete()
+    async delete(id) {
+        const docRef = this.query.doc(id);
+        return await docRef.delete();
     }
 
 }
