@@ -4,8 +4,9 @@
   "description": "Proyecto final curso CoderHouse 32100",
   "main": "src/index.js",
   "scripts": {
+    "dev": "nodemon .",
     "start": "node .",
-    "test": "nodemon ."
+    "test": "WARNING: 'npm test' will run the unitary tests, in order to run the app in DEV mode use 'npm run dev' instead."
   },
   "repository": {
     "type": "git",

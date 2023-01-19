@@ -1,4 +1,4 @@
-const { ProductsDAO } = require('../models/app.models');
+const { ProductsDAO } = require('../models/server.models');
 
 const products_db = new ProductsDAO();
 

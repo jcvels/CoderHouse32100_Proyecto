@@ -6,7 +6,7 @@ const securedPaths = [
 
 const isPathOpen = (req) => {
 	let isSecured = securedPaths.some(item => item.method === req.method && req.url.includes(item.path));
-	console.log('isSecured =', isSecured);
+	console.log(`--> [Securer Middleware] requied path is ${!isSecured && 'not'} secured.`);
 	return !isSecured
 }
 

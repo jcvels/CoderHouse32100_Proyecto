@@ -8,12 +8,8 @@ switch(process.env.DATASOURCE) {
         ProductsDAO = require('./daos/products.mongo.dao');
         CartsDAO = require('./daos/carts.mongo.dao');
         break;
-    case 'firebase':
-        ProductsDAO= require('./daos/products.firebase.dao');
-        CartsDAO = require('./daos/carts.firebase.dao');
-        break;
     default:
-        throw new Error(`Invalid Datasource. DATASOURCE=${process.env.DATASOURCE}. Do must select 'mongo' or 'firebase'.`);
+        throw new Error(`Invalid Datasource. DATASOURCE=${process.env.DATASOURCE}. Do must select a valid option.`);
 }
 
 module.exports ={

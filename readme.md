@@ -4,9 +4,12 @@ Tercera entrega del proyecto final CoderHouse #32100
 ## Resolucion
 
 ### Local
+- Crear archivo `.env` completando los valores indicados. Ver ejemplo `.example.env`. 
 - Ejecutar el comando `npm i`.
 - Ejecutar el comando `npm start`.
-- Acceder a `http://localhost:8080`
+- Acceder a:
+  - `http://localhost:8080/api/...` para interactuar con la API.
+  - `http://localhost:8080/app/...` para utilizar el front de prueba.
 
 ## Consigna
 - Un menú de registro y autenticación de usuarios basado en passport local, guardando en la base de datos las credenciales y el resto de los datos ingresados al momento del registro. 
