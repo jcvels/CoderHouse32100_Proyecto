@@ -1,0 +1,20 @@
+section.mt-5.py-auto
+	form#login-form.p-5(style='max-width:500px;')
+		h2.mb-3 LOG-IN
+		.row.mb-3
+			.col-12
+				input.form-control(type='email' name='mail' placeholder='Ingresa tu email')
+		.row.mb-3
+			.col-12
+				input.form-control.mb-1(type='password' name='password' placeholder='Ingrega tu password')
+		.row.mb-3
+			.col-12
+				input.btn.btn-secondary.btn-sm(type='reset' value='Limpiar')
+				input.btn.btn-primary.btn-sm.ms-1(type='submit' value='Ingresar')
+		.row.mb-3
+			.col-12
+				p#error-msgs-container.text-danger #{errorMessage}
+				p#info-msgs-container.text-info
+		a.text-muted(href="/app/signup") Darme de alta en el sitio
+
+script(type="application/javascript" src='/js/front-login-controller.js')

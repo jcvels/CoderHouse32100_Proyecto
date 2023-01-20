@@ -1,0 +1,35 @@
+section.mt-5.py-auto
+	form#signup-form.p-5(style='max-width:500px;')
+		h2.mb-3 SINGUP
+		.row.mb-3
+			.col-12
+				input.form-control(type='text' name='name' placeholder='Nombre completo')
+		.row.mb-3
+			.col-12
+				input.form-control(type='email' name='mail' placeholder='Correo')
+		.row.mb-3
+			.col-12
+				input.form-control.mb-1(type='password' name='password' placeholder='Password')
+		.row.mb-3
+			.col-12
+				input.form-control(type='text' name='address' placeholder='Dirección')
+		.row.mb-3
+			.col-12
+				input.form-control(type='number' name='age' placeholder='Edad')
+		.row.mb-3
+			.col-12
+				input.form-control(type='phone' name='phone' placeholder='Teléfono')
+		.row.mb-3
+			.col-12
+				input.form-control(type='file' name='avatar' placeholder='Avatar o Foto')
+		.row.mb-3
+			.col-12
+				input.btn.btn-secondary.btn-sm(type='reset' value='Limpiar')
+				input.btn.btn-primary.btn-sm.ms-1(type='submit' value='Registrar')
+		.row.mb-3
+			.col-12
+				p#error-msgs-container.text-danger #{errorMessage}
+				p#info-msgs-container.text-info
+		a.text-muted(href="/app/login") Volver al login
+
+script(type="application/javascript" src='/js/front-signup-controller.js')

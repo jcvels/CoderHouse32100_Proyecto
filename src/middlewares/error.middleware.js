@@ -1,24 +1,29 @@
 const HTTP_STATUS = {
-    OK: 200,
-    CREATED: 201,
-    BAD_REQUEST: 400,
-    NOT_FOUND: 404,
-    INTERNAL_ERROR: 500
+	200: 'OK' ,
+	201: 'CREATED',
+	400: 'BAD_REQUEST',
+	404: 'NOT_FOUND',
+	500: 'INTERNAL_ERROR'
 };
 
-const errorResponse = (message, details = null) => {
-    return {
-        success: false,
-        message,
-        details
-    }
+const response = {
+	status: 'Error' ,
+	code: 500,
+	description: HTTP_STATUS[500],
+	message: 'Unspected error',
+	raw: ''
 }
 
 const errorMiddleware = (error, req, res, next) => {
-    const errorStatus = error.statusCode || HTTP_STATUS.INTERNAL_ERROR;
-    const errorMessage = error.message || "There was an unexpected error";
-    const errorDetails = error.message ? null : error; 
-    return res.status(errorStatus).json(errorResponse(errorMessage, errorDetails));
-}
+	errorArray = error.toString().split(':').map(item => item.trim()) ; console.log( errorArray )
+	
+	response.status = errorArray[0]
+	response.message = errorArray[1]
+	response.code = Number(errorArray[2])
+	response.description = HTTP_STATUS[Number(errorArray[2])]
+	response.raw = error.toString()
+
+	return res.status(response.code).json(response);
+};
 
 module.exports = errorMiddleware;

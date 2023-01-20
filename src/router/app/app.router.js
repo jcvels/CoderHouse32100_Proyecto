@@ -1,7 +1,7 @@
 const router = require('express').Router();
+const { login, signup } = require('../../controllers/views.controller');
 
-router.use('*', (req, res) => {
-  res.send('<h1>Here you will see the front app. Please come back in few days!</h1>');
-});
+router.use('/login', login );
+router.use('/signup', signup );
 
 module.exports = router;
