@@ -27,7 +27,7 @@ logInForm.addEventListener('submit', (e) =>{
 	e.preventDefault()
 
 	const formData = new FormData(e.target);
-	const inputsData = Object.fromEntries(formData);
+	const inputsData = /* { mail: "jcvels@uvcoding.com.ar", password: "1234567890XXX" } */ Object.fromEntries(formData);
 	
 	errorMsgsContainer.innerText = '';
 	infoMsgsContainer.innerText = '';
@@ -43,11 +43,27 @@ logInForm.addEventListener('submit', (e) =>{
 	if( errorCounter === 0 ) {
 		setInfo(stdMessages.VALIDATING_CREDENTIALS);
 
-		//! TODO: Finalizar con respuesta de /api/auth/login
+		const headers = new Headers()
+		headers.append('Content-Type','application/json')
+		const uri = '/api/auth/login'
+		const options = {
+			method: 'post',
+			headers,
+			body: JSON.stringify(inputsData)
+		}
 
-		fetch('/api/auth/login', { method: 'post'} )
-			.then( data => console.log( data ) )
-			.catch( error => console.error( error ) )
+		fetch(uri, options)
+			.then( data => data.json() )
+			.then( data => {
+				if( data.status === 'Success' ) {
+					localStorage.setItem('token',data.token)
+					logInForm.reset()
+					setInfo('Welcome...')
+					setTimeout( () => document.location.replace('/api/products'), 3000 );
+				}
+				else setError(data.message)
+			})
+			.catch( error => console.error(error) )
 	}
 
 })

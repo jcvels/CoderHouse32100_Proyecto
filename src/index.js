@@ -1,11 +1,11 @@
 require('dotenv').config()
 
-const server = require('./server');
+const { server } = require('./server');
 const port = process.env.PORT || 8080;
 
 server.listen(port)
 	.on('listening', () => {
-		console.log(`\n`)
+		console.clear();
 		console.log(`--> listening port ${port}.`)
 
 		if (process.env.DATASOURCE === 'mongo') {
