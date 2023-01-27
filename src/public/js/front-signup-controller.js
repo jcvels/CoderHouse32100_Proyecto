@@ -2,7 +2,6 @@ const signUpForm = document.getElementById('signup-form');
 const errorMsgsContainer = document.getElementById('error-msgs-container');
 const infoMsgsContainer = document.getElementById('info-msgs-container');
 
-
 const stdMessages = {
 	BLANK_NAME: 'Debe especificar un nombre',
 	BLANK_EMAIL: 'Debe especificar un correo electrónico.',
@@ -60,7 +59,6 @@ const validateCreation = (inputsData, creationData) => {
 
 	if( inputsData.name !== creationData.name ) errorCounter++
 	if( inputsData.mail !== creationData.mail ) errorCounter++
-	if( inputsData.password !== creationData.password ) errorCounter++
 	if( Number(inputsData.age) !== creationData.age ) errorCounter++
 	if( inputsData.phone !== creationData.phone ) errorCounter++
 
@@ -94,7 +92,7 @@ signUpForm.addEventListener('submit', (e) =>{
 				}
 				else {
 					setInfo('');
-					setError(`${stdMessages.SINGUP_FAIL} \n ${data.message}`);
+					setError(`${stdMessages.SINGUP_FAIL} \n ${data.message}`); console.log(data);
 				}
 			})
 			.catch( error => setError( error ) )

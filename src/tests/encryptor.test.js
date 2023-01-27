@@ -1,8 +1,8 @@
-const { Encryptor } = require('./encryptor.class');
+const { encrypt, validate } = require('../helpers/encryptor');
 
 const getValidationResult = async (data) => {
-  const hash = await Encryptor.encrypt(data);
-  const validation = await Encryptor.validate(data, hash);
+  const hash = await encrypt(data);
+  const validation = await validate(data, hash);
   return validation
 }
 
