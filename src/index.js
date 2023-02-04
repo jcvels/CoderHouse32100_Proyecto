@@ -5,7 +5,7 @@ const port = process.env.PORT || 8080;
 
 server.listen(port)
 	.on('listening', () => {
-		console.clear();
+
 		console.log(`--> listening port ${port}.`)
 
 		if (process.env.DATASOURCE === 'mongo') {
